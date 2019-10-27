@@ -45,7 +45,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 
-public class AssigOnez5251113 {
+public class AssigOne {
 
     //literally contain the string value of movie and the integer value of rate,
     //which are corresponding to each other.
@@ -253,7 +253,7 @@ public class AssigOnez5251113 {
         Path out = new Path(args[1]);
 
         Job job1 = Job.getInstance(conf, "Job One");
-        job1.setJarByClass(AssigOnez5251113.class);
+        job1.setJarByClass(AssigOne.class);
         job1.setMapperClass(MapperOne.class);
         job1.setReducerClass(ReducerOne.class);
         job1.setMapOutputKeyClass(Text.class);
@@ -267,7 +267,7 @@ public class AssigOnez5251113 {
         }
 
         Job job2 = Job.getInstance(conf, "Job Two");
-        job2.setJarByClass(AssigOnez5251113.class);
+        job2.setJarByClass(AssigOne.class);
         job2.setMapperClass(MapperTwo.class);
         job2.setMapOutputKeyClass(Text.class);
         job2.setMapOutputValueClass(Text.class);
