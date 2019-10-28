@@ -7,14 +7,14 @@ Explanation:
 This solution contains two jobs and each of them contains one mapper and one reducer respectively. 
 
 The first mapper in job one, MapperOne, receives the key and value from raw data by line, as well
-as regards the offset as the key with LongWritable type and the text of this line as the value with
-Text type. Over the period of this MapperOne,  userID is sent to ReducerOne as Text key, as well as
-movie and rate are stored in a custom Writable object---MovieRateWritable.
+as regards the offset of each line as the key with LongWritable type and the text of this line as 
+the value with Text type. Over the period of this MapperOne, userID is sent to ReducerOne as Text 
+key, as well as movie and rate are stored in a custom Writable object---MovieRateWritable.
 
 The first reducer in job one, ReducerOne, after receiving the key and values from MapperOne, adds 
 iterable values into "movieRateList". By the way, I need to create a new object to avoid reuse. 
 Then, sort this "movieRateList" by ascending according to "movie", in case the situation of (M1, M2) 
-and (M2, M1) happen. Lastly, create movie pair and corresponding  (user, rate1, rate2) by double 
+and (M2, M1) happen. Lastly, create movie pair and corresponding  (user, rate1, rate2) by doubly nested 
 loops, and write movie pair and (user, rate1, rate2) as key and value respectively into "out1" file, 
 which is an intermediate data file, also as an input file for the second job.
 
