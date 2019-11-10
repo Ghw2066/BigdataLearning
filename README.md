@@ -12,3 +12,4 @@ javac -cp "Hadoop-Core.jar" AssigOne.java
 java -cp "Hadoop-Core.jar" AssigOne.java ratings.dat output/
 ```
 
+Blog for this assignment [link](https://ghw2066.github.io/2019/007/)
